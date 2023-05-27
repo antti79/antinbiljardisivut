@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antin biljardisivut</title>
+    <link rel="stylesheet" href="../css/tyylit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="../index.html">
+        Etusivu</a>
+    <a href="pelikeidas.html">
+        Pelikeidas</a>
+    <a href="galaxie.html">
+        Galaxie Seinäjoki</a>
+    <a href="quizzes.html">
+        Quizzes</a>
+    <a href="kaavio.html">
+        kaavio</a>
+</div>
+
+<div class="header">
+  <h1>QUIZZES</h1>
+</div>
+
+
+
+<div class="row">
+  <div class="main">
+    <p> Tämä sivu sisältää kysymyksiä biljardista. Valitse oikea vastaus kuhunkin kohtaan.
+    </p>
+    <p>Kuinka montaa palloa käytetään ysipallossa?</p>
+    <form>
+      <input type="radio" id="1a" name="ysipallo"
+        value="a" checked>
+      <label for="8">8</label>
+      <input type="radio" id="1b" name="ysipallo"
+        value="b">
+      <label for="9">9</label>
+      <input type="radio" id="1c" name="ysipallo"
+        value="c">
+      <label for="10">10</label>
+    </form>
+    
+    <p>Kuinka montaa palloa käytetään kasipallossa?</p>
+    <form>
+      <input type="radio" id="2a" name="kasipallo"
+        value="a" checked>
+      <label for="2a">15</label>
+      <input type="radio" id="2b" name="kasipallo"
+        value="b">
+      <label for="2b">16</label>
+      <input type="radio" id="2c" name="kasipallo"
+        value="c">
+      <label for="2c">17</label>
+    </form>
+
+    <p>Kuinka montaa palloa käytetään kymppipallossa?</p>
+    <form>
+      <input type="radio" id="3a" name="kymppipallo"
+        value="a" checked>
+      <label for="3a">10</label>
+      <input type="radio" id="3b" name="kymppipallo"
+        value="b">
+      <label for="3b">11</label>
+      <input type="radio" id="3c" name="kymppipallo"
+        value="c">
+      <label for="3c">12</label>
+    </form>
+
+    <p>Missä seuraavista lajeista tulee aina vapaa käsipallo, kun kivi menee pussiin?</p>
+    <form>
+      <label for="4">8?</label>
+      <input type="radio" id="4a" name="kasitesti"
+        value="kyllä" checked>
+      <label for="4a">Kyllä</label>
+      <input type="radio" id="4b" name="kasitesti"
+        value="ei">
+      <label for="4b">Ei</label>
+    </form>
+
+    <form>
+      <label for="5">9?</label>
+      <input type="radio" id="5a" name="ysitesti"
+        value="kyllä" checked>
+      <label for="5a">Kyllä</label>
+      <input type="radio" id="5b" name="ysitesti"
+        value="ei">
+      <label for="5b">Ei</label>
+    </form>
+
+    <form>
+      <label for="6">10?</label>
+      <input type="radio" id="6a" name="kymppitesti"
+        value="kyllä" checked>
+      <label for="6a">Kyllä</label>
+      <input type="radio" id="6b" name="kymppitesti"
+        value="ei">
+      <label for="6b">Ei</label>
+    </form>
+
+    <p>Paina vastaa, niin saat tietää montako meni oikein.</p>
+    <form>
+			<input
+				onclick="tarkista();"
+				type="button" id="nappi" name="nappi" value="Vastaa">
+		</form>
+    <div id="tarkistus"></div>
+  </div>
+
+
+  <div class="side">
+    <p><img src="../media/quizzes.jpg" alt="kuva pelaajasta" style="width:450px;height:600px;"></p>
+  </div>
+</div>
+
+
+
+<script>
+  "use strict";
+  let oikein = 0;
+  function tarkista() {
+    oikein = 0;
+    if (document.getElementById('1c').checked) {
+      oikein = oikein + 1};
+    if (document.getElementById('2b').checked) {
+      oikein = oikein + 1};
+    if (document.getElementById('3b').checked) {
+      oikein = oikein + 1};
+    if (document.getElementById('4b').checked) {
+      oikein = oikein + 1};
+    if (document.getElementById('5a').checked) {
+      oikein = oikein + 1};
+    if (document.getElementById('6a').checked) {
+      oikein = oikein + 1};
+    document.getElementById('tarkistus').innerHTML = "<p>Sait " + oikein + " oikein</p>";
+  }
+
+</script>
+</body>
+</html>

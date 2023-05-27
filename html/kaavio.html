@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antin biljardisivut</title>
+    <link rel="stylesheet" href="../css/tyylit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="luoKaavio(),piilotah()">
+
+<div class="navbar">
+    <a href="../index.html">
+        Etusivu</a>
+    <a href="pelikeidas.html">
+        Pelikeidas</a>
+    <a href="galaxie.html">
+        Galaxie Seinäjoki</a>
+    <a href="quizzes.html">
+        Quizzes</a>
+    <a href="kaavio.html">
+        kaavio</a>
+</div>
+
+<div class="kaavioHeader">
+  <h1>KAAVIO</h1>
+</div>
+
+
+
+<p nimet></p>
+
+<div class="row">
+  <div class="eka">
+    <form>
+      <p></p>
+      <input type="radio" id="cup" name="kaavio" value="CUP" onclick="piilotah()" checked>
+      <label for="cup">CUP</label>
+      <input type="radio" id="tuplaEliminaatio" name="kaavio" value="tuplaEliminaatio" onclick="paljastah()">
+      <label for="tuplaEliminaatio">Tuplaeliminaatio</label>
+      <p></p>
+    </form>
+    <div>
+      <label for="nimi1">1</label>
+    <input type="text" id="nimi1" name="nimi1" value="">
+    <p></p>
+    <label for="nimi2">2</label>
+    <input type="text" id="nimi2" name="nimi2" value="">
+    <p></p>
+    <label for="nimi3">3</label>
+    <input type="text" id="nimi3" name="nimi3" value="">
+    <p></p>
+    <label for="nimi4">4</label>
+    <input type="text" id="nimi4" name="nimi4" value="">
+    <p></p>
+    <label for="nimi5">5</label>
+    <input type="text" id="nimi5" name="nimi5" value="">
+    <p></p>
+    <label for="nimi6">6</label>
+    <input type="text" id="nimi6" name="nimi6" value="">
+    <p></p>
+    <label for="nimi7">7</label>
+    <input type="text" id="nimi7" name="nimi7" value="">
+    <p></p>
+    <label for="nimi8">8</label>
+    <input type="text" id="nimi8" name="nimi8" value="">
+    <p></p> 
+    </div>
+    <input onclick="luoKaavio();"
+      type="button" id="luo" name="luo" value="luoKaavio">
+    
+  </div>
+
+
+  <div class="toka">
+    <div id="quarter">Q</div>
+    <input type="button" id="a" name="a"
+      onclick="document.getElementById('i').value=document.getElementById('a').value,
+      document.getElementById('p').value=document.getElementById('b').value;">
+    <p></p>
+    <input type="button" id="b" name="b"
+      onclick="document.getElementById('i').value=document.getElementById('b').value,
+      document.getElementById('p').value=document.getElementById('a').value;">
+    <p></p>
+    <input type="button" id="c" name="c"
+      onclick="document.getElementById('j').value=document.getElementById('c').value,
+      document.getElementById('q').value=document.getElementById('d').value;">
+    <p></p>
+    <input type="button" id="d" name="d"
+      onclick="document.getElementById('j').value=document.getElementById('d').value,
+      document.getElementById('q').value=document.getElementById('c').value;">
+    <p></p>
+    <input type="button" id="e" name="e"
+      onclick="document.getElementById('k').value=document.getElementById('e').value,
+      document.getElementById('r').value=document.getElementById('f').value;">
+    <p></p>
+    <input type="button" id="f" name="f"
+      onclick="document.getElementById('k').value=document.getElementById('f').value,
+      document.getElementById('r').value=document.getElementById('e').value;">
+    <p></p>
+    <input type="button" id="g" name="g"
+      onclick="document.getElementById('l').value=document.getElementById('g').value,
+      document.getElementById('s').value=document.getElementById('h').value;">
+    <p></p>
+    <input type="button" id="h" name="h"
+      onclick="document.getElementById('l').value=document.getElementById('h').value,
+      document.getElementById('s').value=document.getElementById('g').value;">
+    <p></p>
+    
+  </div>
+  <div class="kolmas">
+    <div id="semi">S</div>
+    <input type="button" id="i" name="i"
+      onclick="document.getElementById('m').value=document.getElementById('i').value,
+      document.getElementById('t').value=document.getElementById('j').value;">
+    <p>|</p>
+    <input type="button" id="j" name="j"
+      onclick="document.getElementById('m').value=document.getElementById('j').value,
+      document.getElementById('t').value=document.getElementById('i').value;">
+    <p>-</p>
+    <input type="button" id="k" name="k"
+      onclick="document.getElementById('n').value=document.getElementById('k').value,
+      document.getElementById('v').value=document.getElementById('l').value;">
+    <p>|</p>
+    <input type="button" id="l" name="l"
+      onclick="document.getElementById('n').value=document.getElementById('l').value,
+      document.getElementById('v').value=document.getElementById('k').value;">
+    
+  </div>
+  <div class="neljas">
+    <div id="final">F</div>
+    <p>-</p>
+    <input type="button" id="m" name="m"
+      onclick="document.getElementById('o').value=document.getElementById('m').value,
+      document.getElementById('h1').value=document.getElementById('n').value;">
+    <p>|</p>
+    <p>|</p>
+    <p>|</p>
+    <input type="button" id="n" name="n"
+      onclick="document.getElementById('o').value=document.getElementById('n').value,
+      document.getElementById('h1').value=document.getElementById('m').value;">
+    <p>-</p>
+  </div>
+  <div class="viides">
+    <div id="winner">W</div>
+    <p>-</p>
+    <p>-</p>
+    <p>-</p>
+    <input type="button" id="o" name="o"
+      onclick="tyhjenna()">
+    <p>-</p>
+    <p>-</p>
+    <p>-</p>
+  </div>
+</div>
+
+<div class="row2" id="tokarivi">
+  <div class="heka">
+    <p>Häviäjien puoli</p>
+  </div>
+  <div class="htoka">
+    <input type="button" id="s" name="s"
+      onclick="document.getElementById('u').value=document.getElementById('s').value;">
+    <p></p>
+    <input type="button" id="r" name="r"
+      onclick="document.getElementById('u').value=document.getElementById('r').value;">
+    <p>-</p>
+    <input type="button" id="q" name="q"
+      onclick="document.getElementById('x').value=document.getElementById('q').value;">
+    <p></p>
+    <input type="button" id="p" name="p"
+      onclick="document.getElementById('x').value=document.getElementById('p').value;">
+  </div>
+  <div class="hkolmas">
+    <input type="button" id="t" name="t"
+      onclick="document.getElementById('y').value=document.getElementById('t').value;">
+    <p></p>
+    <input type="button" id="u" name="u"
+      onclick="document.getElementById('y').value=document.getElementById('u').value;">
+    <p>-</p>
+    <input type="button" id="v" name="v"
+      onclick="document.getElementById('z').value=document.getElementById('v').value;">
+    <p></p>
+    <input type="button" id="x" name="x"
+      onclick="document.getElementById('z').value=document.getElementById('x').value;">
+    <p></p>
+  </div>
+  <div class="hneljas">
+    <p></p>
+    <input type="button" id="y" name="y"
+      onclick="document.getElementById('h2').value=document.getElementById('y').value;">
+    <p>|</p>
+    <p>|</p>
+    <input type="button" id="z" name="z"
+      onclick="document.getElementById('h2').value=document.getElementById('z').value;">
+  </div>
+  <div class="hviides">
+    <p></p>
+    <input type="button" id="h1" name="h1"
+      onclick="document.getElementById('h3').value=document.getElementById('h1').value;">
+    <p>|</p>
+    <p>|</p>
+    <input type="button" id="h2" name="h2"
+      onclick="document.getElementById('h3').value=document.getElementById('h2').value;">
+  </div>
+  <div class="hkuudes">
+    <p>-</p>
+    <input type="button" id="h3" name="h3">
+    <p>-</p>
+  </div>
+</div>
+
+<script>
+  "use strict";
+  var lista = [];
+  let monesko = 0;
+  
+  function luoKaavio() {
+    var nimet = [];
+    if (document.getElementById("nimi1").value != "") {
+      nimet.push(document.getElementById("nimi1").value) }
+    if (document.getElementById("nimi2").value != "") {
+      nimet.push(document.getElementById("nimi2").value) }
+    if (document.getElementById("nimi3").value != "") {
+      nimet.push(document.getElementById("nimi3").value) }
+    if (document.getElementById("nimi4").value != "") {
+      nimet.push(document.getElementById("nimi4").value) }
+    if (document.getElementById("nimi5").value != "") {
+      nimet.push(document.getElementById("nimi5").value) }
+    if (document.getElementById("nimi6").value != "") {
+      nimet.push(document.getElementById("nimi6").value) }
+    if (document.getElementById("nimi7").value != "") {
+      nimet.push(document.getElementById("nimi7").value) }
+    if (document.getElementById("nimi8").value != "") {
+      nimet.push(document.getElementById("nimi8").value) }
+    
+    document.getElementById('quarter').innerHTML = "<p>Quarter</p>"
+    document.getElementById('semi').innerHTML = "<p>Semi</p>"
+    document.getElementById('final').innerHTML = "<p>Final</p>"
+    document.getElementById('winner').innerHTML = "<p>WINNER</p>"
+    let maara = 0;
+    while (nimet.length > 0) {
+      monesko = Math.floor(Math.random() * nimet.length);
+      lista[maara] = nimet.splice(monesko,1);
+      maara++;
+    }
+    while (maara < 8) {
+      lista[maara] = "w. o."
+      maara++
+    }
+      
+    document.getElementById('a').value = lista[0];
+    document.getElementById('e').value = lista[1];
+    document.getElementById('g').value = lista[2];
+    document.getElementById('c').value = lista[3];
+    document.getElementById('h').value = lista[4];
+    document.getElementById('d').value = lista[5];
+    document.getElementById('f').value = lista[6];
+    document.getElementById('b').value = lista[7];
+    }
+
+  function tyhjenna() {
+    document.getElementById('a').value=""
+    document.getElementById('b').value=""
+    document.getElementById('c').value=""
+    document.getElementById('d').value=""
+    document.getElementById('e').value=""
+    document.getElementById('f').value=""
+    document.getElementById('g').value=""
+    document.getElementById('h').value=""
+    document.getElementById('i').value=""
+    document.getElementById('j').value=""
+    document.getElementById('k').value=""
+    document.getElementById('l').value=""
+    document.getElementById('m').value=""
+    document.getElementById('n').value=""
+    document.getElementById('o').value=""
+    document.getElementById('p').value=""
+    document.getElementById('q').value=""
+    document.getElementById('r').value=""
+    document.getElementById('s').value=""
+    document.getElementById('t').value=""
+    document.getElementById('u').value=""
+    document.getElementById('v').value=""
+    document.getElementById('x').value=""
+    document.getElementById('y').value=""
+    document.getElementById('z').value=""
+    document.getElementById('h1').value=""
+    document.getElementById('h2').value=""
+    document.getElementById('h3').value=""
+  }
+  function piilotah() {
+    document.getElementById("tokarivi").style.display = "none"
+  }
+  function paljastah() {
+    document.getElementById("tokarivi").style.display = "flex"
+  }
+</script>
+</body>
+</html>

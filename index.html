@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antin biljardisivut</title>
+    <link rel="stylesheet" href="css/tyylit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="paiva();">
+
+<div class="navbar">
+    <a href="index.html">
+        Etusivu</a>
+    <a href="html/pelikeidas.html">
+        Pelikeidas</a>
+    <a href="html/galaxie.html">
+        Galaxie Seinäjoki</a>
+    <a href="html/quizzes.html">
+        Quizzes</a>
+    <a href="html/kaavio.html">
+        kaavio</a>
+</div>
+
+<div class="header">
+  <h1>ANTIN BILJARDISIVUT</h1>
+</div>
+
+<div class="row">
+  <div class="main">
+    <p>Hei !</p>
+    <p>Tällä sivulla kerron vähän tarinaa biljardin peluusta.</p>
+    <p>Aloitin sen harrastuksena 14 vuotiaana. Siitä lähtien olen pelannut biljardia
+      enemmän tai vähemmän. Viimeinen jakso on kestänyt kolme vuotta, jota
+      ennen oli noin 10 vuoden tauko. Oheisessa kuvassa olen Moosessa pelaamassa.
+      Suomessa pelataan biljardia kaikkialla. Enimmäkseen pelataan poolia ja snookeria.
+      Kaisa ja Kara ovat vähemmän tunnettuja. Snookerin kisoja televisioidaan
+      enemmän kuin poolia. Snooperissa pöytä on 12 jalkaa pitkä ja siinä on lyöntipalla, 
+      15 punaista palloa sekä 6 väripalloa. Pool pöytä on kilpailuissa 9 jalkaa pitkä,
+      mutta niitä löytyy ravintoloista pienempinäkin, mikä on hyvä asia, koska se Lisää
+      tietämystä lajiin ja auttaa lisäämään harrastajien määrää. Pool pöydälle on 
+      kehitetty useita eri pelilajeja, joista tunnetuimmat ovat ysipallo ja kasipallo.
+    </p>
+    <a href="https://www.sbil.fi/pool/saannot/" target="_blank">
+      Sääntöjä Suomen Biljardiliiton sivuilla</a>
+    <p id="paivamaara"></p>
+  </div>
+
+  <div class="side">
+    <p><img src="media/moosessa.jpeg" alt="Antin kuva" style="width:600px;height:800px;"></p>
+  </div>
+</div>
+
+<script>
+  "use strict";
+  function paiva() {
+    let paivays = localStorage.getItem('paivays')
+     if (paivays != null) {
+      document.getElementById('paivamaara').innerHTML = "Kävit täällä viimeksi " + paivays;
+     } else {
+      document.getElementById('paivamaara').innerHTML = "Tämä on ensimmäinen käyntisi tällä sivulla";
+    }
+    const nyt = new Date();
+
+    let p = nyt.getDate();
+    let k = nyt.getMonth();
+    let v = nyt.getFullYear();
+    k = k + 1;
+
+    localStorage.setItem('paivays', p + "." + k + "." + v);
+   
+  }
+</script>
+
+</body>
+</html>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body onload="luoKaavio(),piilotah()">
+<body onload="arvoKaavio(),piilotah()">
 
 <div class="navbar">
     <a href="../index.html">
@@ -25,10 +25,6 @@
 <div class="kaavioHeader">
   <h1>KAAVIO</h1>
 </div>
-
-
-
-<p nimet></p>
 
 <div class="row">
   <div class="eka">
@@ -66,9 +62,12 @@
     <input type="text" id="nimi8" name="nimi8" value="">
     <p></p> 
     </div>
+    <input onclick="arvoKaavio();"
+      type="button" id="arvo" name="arvo" value="Arvo kaavio">
     <input onclick="luoKaavio();"
-      type="button" id="luo" name="luo" value="luoKaavio">
-    
+      type="button" id="luo" name="luo" value="Luo suora kaavio">
+      <p></p>
+      <label for="kaavionumero" id="kaavionumero"></label>
   </div>
 
 
@@ -214,8 +213,10 @@
   "use strict";
   var lista = [];
   let monesko = 0;
+  let kaavionro = -1;
   
-  function luoKaavio() {
+  function arvoKaavio() {
+    kaavionro ++;
     var nimet = [];
     if (document.getElementById("nimi1").value != "") {
       nimet.push(document.getElementById("nimi1").value) }
@@ -257,7 +258,44 @@
     document.getElementById('d').value = lista[5];
     document.getElementById('f').value = lista[6];
     document.getElementById('b').value = lista[7];
+
+    if (kaavionro > 0) {
+      document.getElementById('kaavionumero').innerHTML = "Arvottu kaavio nro " + kaavionro;
     }
+    
+    }
+
+  function luoKaavio() {
+    kaavionro ++;
+    if (document.getElementById("nimi1").value != "") {
+      document.getElementById('a').value = (document.getElementById("nimi1").value)
+    } else { document.getElementById('a').value ="w. o."}
+    if (document.getElementById("nimi2").value != "") {
+      document.getElementById('b').value = (document.getElementById("nimi2").value)
+    } else { document.getElementById('b').value ="w. o."}
+    if (document.getElementById("nimi3").value != "") {
+      document.getElementById('c').value = (document.getElementById("nimi3").value)
+    } else { document.getElementById('c').value ="w. o."}
+    if (document.getElementById("nimi4").value != "") {
+      document.getElementById('d').value = (document.getElementById("nimi4").value)
+    } else { document.getElementById('d').value ="w. o."}
+    if (document.getElementById("nimi5").value != "") {
+      document.getElementById('e').value = (document.getElementById("nimi5").value)
+    } else { document.getElementById('e').value ="w. o."}
+    if (document.getElementById("nimi6").value != "") {
+      document.getElementById('f').value = (document.getElementById("nimi6").value)
+    } else { document.getElementById('f').value ="w. o."}
+    if (document.getElementById("nimi7").value != "") {
+      document.getElementById('g').value = (document.getElementById("nimi7").value)
+    } else { document.getElementById('g').value ="w. o."}
+    if (document.getElementById("nimi8").value != "") {
+      document.getElementById('h').value = (document.getElementById("nimi8").value)
+    } else { document.getElementById('h').value ="w. o."}
+
+    if (kaavionro > 0) {
+      document.getElementById('kaavionumero').innerHTML = "Suora kaavio nro " + kaavionro;
+    }
+  }
 
   function tyhjenna() {
     document.getElementById('a').value=""
